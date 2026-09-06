@@ -3,199 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>किसान सेवा और ट्रांसपोर्ट पोर्टल</title>
+    <title>Kisan Seva Portal - किसान सेवा और कृषि बाजार</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            margin: 0;
-            padding: 15px;
-        }
-        .container {
-            max-width: 500px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-            font-size: 22px;
-        }
-        .section-box {
-            background: #eef2f3;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-        }
-        h3 {
-            color: #27ae60;
-            font-size: 18px;
-            margin-top: 0;
-        }
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 8px;
-            font-size: 14px;
-        }
-        input, select, textarea, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
-        button {
-            background-color: #27ae60;
-            color: white;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #219653;
-        }
-        .card {
-            background: white;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 4px;
-            border-left: 5px solid #27ae60;
-            font-size: 14px;
-        }
-        .card.order {
-            border-left-color: #e67e22;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f2f9f2; color: #333; }
+        header { background: #2e7d32; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h2 { color: #2e7d32; border-bottom: 2px solid #a5d6a7; padding-bottom: 5px; margin-top: 30px; }
+        .card { background: #e8f5e9; padding: 15px; margin: 15px 0; border-radius: 8px; border-left: 5px solid #4caf50; }
+        .product-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; }
+        .product-item { background: #fff; border: 1px solid #c8e6c9; padding: 15px; width: 45%; border-radius: 8px; text-align: center; box-sizing: border-box; }
+        .btn { background: #2e7d32; color: white; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px; font-weight: bold; }
+        .social-btn { background: #1976d2; }
+        .insta-btn { background: #e1306c; }
+        .ad-box { background: #fff8e1; border: 2px dashed #ffb300; padding: 15px; text-align: center; margin: 20px 0; border-radius: 8px; }
+        footer { text-align: center; padding: 15px; background: #333; color: white; margin-top: 30px; border-radius: 0 0 10px 10px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>🌾 किसान सेवा और ट्रांसपोर्ट पोर्टल 🌾</h2>
+    <header>
+        <h1>🌾 किसान सेवा और कृषि बाजार पोर्टल</h1>
+        <p>खाद-बीज की होम डिलीवरी, फसल बिक्री और कृषि वीडियो अपडेट</p>
+    </header>
 
-    <!-- भाग 1: किसान खाद/बीज मंगाने के लिए ऑर्डर/संदेश भेजें -->
-    <div class="section-box">
-        <h3>🛒 खाद, बीज या सामान मंगाने के लिए</h3>
-        <label for="orderName">किसान का नाम:</label>
-        <input type="text" id="orderName" placeholder="अपना नाम लिखें">
+    <div class="container">
+        
+        <!-- सेक्शन 1: सोशल मीडिया (Instagram & Facebook वीडियो) -->
+        <h2>📱 हमारे वीडियो और सोशल मीडिया पेज</h2>
+        <div class="card" style="text-align: center;">
+            <p>खेती-किसानी से जुड़ी नई जानकारी और वीडियो देखने के लिए हमारे सोशल मीडिया पेज से जुड़ें:</p>
+            <a href="https://instagram.com/आपका_इंस्टाग्राम_यूजरनेम" class="btn insta-btn" target="_blank">Instagram पर फॉलो करें</a>
+            <a href="https://facebook.com/आपका_फेसबुक_पेज" class="btn social-btn" target="_blank">Facebook पेज देखें</a>
+        </div>
 
-        <label for="orderPhone">मोबाइल नंबर:</label>
-        <input type="tel" id="orderPhone" placeholder="फोन नंबर लिखें">
+        <!-- सेक्शन 2: खाद, यूरिया और बीज ऑनलाइन मंगाने की सुविधा -->
+        <h2>📦 खाद, बीज और कृषि सामग्री मंगाएं (Online Booking)</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <h3>यूरिया खाद (Urea)</h3>
+                <p>शुद्ध और उच्च गुणवत्ता वाली यूरिया सीधे घर पर मंगाएं।</p>
+                <a href="https://wa.me/919005470497?text=मुझे%20यूरिया%20खाद%20चाहिए" class="btn" target="_blank">व्हाट्सएप पर आर्डर करें</a>
+            </div>
+            <div class="product-item">
+                <h3>उन्नत बीज (Best Seeds)</h3>
+                <p>गेहूं, धान और सब्जियों के प्रमाणित बीज उपलब्ध।</p>
+                <a href="https://wa.me/919005470497?text=मुझे%20बीज%20चाहिए" class="btn" target="_blank">व्हाट्सएप पर आर्डर करें</a>
+            </div>
+        </div>
 
-        <label for="itemNeeded">क्या सामान चाहिए?:</label>
-        <select id="itemNeeded">
-            <option value="यूरिया खाद (Urea)">यूरिया खाद (Urea)</option>
-            <option value="सल्फर (Sulfur)">सल्फर (Sulfur)</option>
-            <option value="बीज (Seeds)">उत्तम किस्म के बीज (Seeds)</option>
-            <option value="अन्य कृषि सामान">अन्य कृषि सामान</option>
-        </select>
+        <!-- सेक्शन 3: फसल बेचने (गेहूं, चावल) और ट्रांसपोर्ट की जानकारी -->
+        <h2>🚜 फसल बेचना और ट्रांसपोर्ट सुविधा (Mandi & Transport)</h2>
+        <div class="card">
+            <h3>अपनी फसल (गेहूं/चावल/अन्न) सही दाम पर बेचें</h3>
+            <p>यदि आप अपनी उपज बड़े व्यापारियों या बड़ी मंडियों तक पहुंचाना चाहते हैं, तो हम आपको सीधा संपर्क और ट्रांसपोर्ट की सुविधा उपलब्ध कराते हैं।</p>
+            <a href="https://wa.me/919005470497?text=मुझे%20अपनी%20फसल%20बेचनी%20है" class="btn" style="background: #e65100;" target="_blank">व्यापारी से बात करें / ट्रांसपोर्ट बुक करें</a>
+        </div>
 
-        <label for="itemQty">कितनी मात्रा चाहिए?:</label>
-        <input type="text" id="itemQty" placeholder="जैसे: 2 बोरी यूरिया">
+        <!-- सेक्शन 4: विज्ञापन और कमाई का क्षेत्र -->
+        <div class="ad-box">
+            <h3>💡 विज्ञापन / स्पॉन्सरशिप जोन</h3>
+            <p>यहाँ स्थानीय खाद दुकान, ट्रैक्टर पार्ट्स या कृषि कंपनियों के विज्ञापन चलाकर आप कमाई कर सकते हैं।</p>
+        </div>
 
-        <button onclick="sendOrder()" style="background-color: #e67e22;">सामान भेजने का ऑर्डर दें</button>
     </div>
 
-    <!-- भाग 2: फसल बेचने के लिए -->
-    <div class="section-box">
-        <h3>🌾 अनाज बेचने के लिए (ट्रांसपोर्ट हेतु)</h3>
-        <label for="farmerName">किसान का नाम:</label>
-        <input type="text" id="farmerName" placeholder="अपना नाम लिखें">
-
-        <label for="phone">मोबाइल नंबर:</label>
-        <input type="tel" id="phone" placeholder="फोन नंबर लिखें">
-
-        <label for="cropType">अनाज का प्रकार:</label>
-        <select id="cropType">
-            <option value="गेहूं (Wheat)">गेहूं (Wheat)</option>
-            <option value="धान (Paddy)">धान (Paddy)</option>
-            <option value="मक्का (Maize)">मक्का (Maize)</option>
-        </select>
-
-        <label for="quantity">मात्रा (क्विंटल में):</label>
-        <input type="number" id="quantity" placeholder="जैसे: 50 क्विंटल">
-
-        <button onclick="addCrop()">अनाज की सूची में डालें</button>
-    </div>
-
-    <h3>📋 प्राप्त आर्डर और अनाज की लिस्ट:</h3>
-    <div id="displayList">
-        <p style="color: #888; text-align: center;">अभी कोई नया आर्डर या डेटा नहीं है...</p>
-    </div>
-</div>
-
-<script>
-    function sendOrder() {
-        var name = document.getElementById('orderName').value;
-        var phone = document.getElementById('orderPhone').value;
-        var item = document.getElementById('itemNeeded').value;
-        var qty = document.getElementById('itemQty').value;
-
-        if(name === "" || phone === "" || qty === "") {
-            alert("कृपया सभी जानकारी भरें!");
-            return;
-        }
-
-        var listDiv = document.getElementById('displayList');
-        if(listDiv.innerHTML.includes("अभी कोई नया आर्डर")) {
-            listDiv.innerHTML = "";
-        }
-
-        var card = document.createElement('div');
-        card.className = 'card order';
-        card.innerHTML = "<strong>📦 नया सामान मंगाने का ऑर्डर!</strong><br>" +
-                         "<strong>नाम:</strong> " + name + "<br>" +
-                         "<strong>फोन:</strong> " + phone + "<br>" +
-                         "<strong>चाहिए:</strong> " + item + " (" + qty + ")";
-
-        listDiv.prepend(card); // नया आर्डर सबसे ऊपर दिखेगा
-
-        document.getElementById('orderName').value = "";
-        document.getElementById('orderPhone').value = "";
-        document.getElementById('itemQty').value = "";
-
-        alert("आपका आर्डर गोदाम तक भेज दिया गया है! जल्द ही सामान पहुँचाया जाएगा।");
-    }
-
-    function addCrop() {
-        var name = document.getElementById('farmerName').value;
-        var phone = document.getElementById('phone').value;
-        var crop = document.getElementById('cropType').value;
-        var qty = document.getElementById('quantity').value;
-
-        if(name === "" || phone === "" || qty === "") {
-            alert("कृपया सभी जानकारी भरें!");
-            return;
-        }
-
-        var listDiv = document.getElementById('displayList');
-        if(listDiv.innerHTML.includes("अभी कोई नया आर्डर")) {
-            listDiv.innerHTML = "";
-        }
-
-        var card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = "<strong>🌾 अनाज बिक्री की जानकारी</strong><br>" +
-                         "<strong>नाम:</strong> " + name + "<br>" +
-                         "<strong>फोन:</strong> " + phone + "<br>" +
-                         "<strong>अनाज:</strong> " + crop + " - " + qty + " क्विंटल";
-
-        listDiv.prepend(card);
-
-        document.getElementById('farmerName').value = "";
-        document.getElementById('phone').value = "";
-        document.getElementById('quantity').value = "";
-
-        alert("अनाज की जानकारी सफलतापर्वक जुड़ गई है!");
-    }
-</script>
+    <footer>
+        <p>© 2026 Kisan Seva Portal | अबू धाबी से संचालित डिजिटल किसान सेवा</p>
+    </footer>
 
 </body>
 </html>
