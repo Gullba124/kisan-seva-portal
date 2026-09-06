@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>किसान सेवा और ट्रांसपोर्ट पोर्टल</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 15px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 22px;
+        }
+        .section-box {
+            background: #eef2f3;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #27ae60;
+            font-size: 18px;
+            margin-top: 0;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        button {
+            background-color: #27ae60;
+            color: white;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #219653;
+        }
+        .card {
+            background: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border-left: 5px solid #27ae60;
+            font-size: 14px;
+        }
+        .card.order {
+            border-left-color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🌾 किसान सेवा और ट्रांसपोर्ट पोर्टल 🌾</h2>
+
+    <!-- भाग 1: किसान खाद/बीज मंगाने के लिए ऑर्डर/संदेश भेजें -->
+    <div class="section-box">
+        <h3>🛒 खाद, बीज या सामान मंगाने के लिए</h3>
+        <label for="orderName">किसान का नाम:</label>
+        <input type="text" id="orderName" placeholder="अपना नाम लिखें">
+
+        <label for="orderPhone">मोबाइल नंबर:</label>
+        <input type="tel" id="orderPhone" placeholder="फोन नंबर लिखें">
+
+        <label for="itemNeeded">क्या सामान चाहिए?:</label>
+        <select id="itemNeeded">
+            <option value="यूरिया खाद (Urea)">यूरिया खाद (Urea)</option>
+            <option value="सल्फर (Sulfur)">सल्फर (Sulfur)</option>
+            <option value="बीज (Seeds)">उत्तम किस्म के बीज (Seeds)</option>
+            <option value="अन्य कृषि सामान">अन्य कृषि सामान</option>
+        </select>
+
+        <label for="itemQty">कितनी मात्रा चाहिए?:</label>
+        <input type="text" id="itemQty" placeholder="जैसे: 2 बोरी यूरिया">
+
+        <button onclick="sendOrder()" style="background-color: #e67e22;">सामान भेजने का ऑर्डर दें</button>
+    </div>
+
+    <!-- भाग 2: फसल बेचने के लिए -->
+    <div class="section-box">
+        <h3>🌾 अनाज बेचने के लिए (ट्रांसपोर्ट हेतु)</h3>
+        <label for="farmerName">किसान का नाम:</label>
+        <input type="text" id="farmerName" placeholder="अपना नाम लिखें">
+
+        <label for="phone">मोबाइल नंबर:</label>
+        <input type="tel" id="phone" placeholder="फोन नंबर लिखें">
+
+        <label for="cropType">अनाज का प्रकार:</label>
+        <select id="cropType">
+            <option value="गेहूं (Wheat)">गेहूं (Wheat)</option>
+            <option value="धान (Paddy)">धान (Paddy)</option>
+            <option value="मक्का (Maize)">मक्का (Maize)</option>
+        </select>
+
+        <label for="quantity">मात्रा (क्विंटल में):</label>
+        <input type="number" id="quantity" placeholder="जैसे: 50 क्विंटल">
+
+        <button onclick="addCrop()">अनाज की सूची में डालें</button>
+    </div>
+
+    <h3>📋 प्राप्त आर्डर और अनाज की लिस्ट:</h3>
+    <div id="displayList">
+        <p style="color: #888; text-align: center;">अभी कोई नया आर्डर या डेटा नहीं है...</p>
+    </div>
+</div>
+
+<script>
+    function sendOrder() {
+        var name = document.getElementById('orderName').value;
+        var phone = document.getElementById('orderPhone').value;
+        var item = document.getElementById('itemNeeded').value;
+        var qty = document.getElementById('itemQty').value;
+
+        if(name === "" || phone === "" || qty === "") {
+            alert("कृपया सभी जानकारी भरें!");
+            return;
+        }
+
+        var listDiv = document.getElementById('displayList');
+        if(listDiv.innerHTML.includes("अभी कोई नया आर्डर")) {
+            listDiv.innerHTML = "";
+        }
+
+        var card = document.createElement('div');
+        card.className = 'card order';
+        card.innerHTML = "<strong>📦 नया सामान मंगाने का ऑर्डर!</strong><br>" +
+                         "<strong>नाम:</strong> " + name + "<br>" +
+                         "<strong>फोन:</strong> " + phone + "<br>" +
+                         "<strong>चाहिए:</strong> " + item + " (" + qty + ")";
+
+        listDiv.prepend(card); // नया आर्डर सबसे ऊपर दिखेगा
+
+        document.getElementById('orderName').value = "";
+        document.getElementById('orderPhone').value = "";
+        document.getElementById('itemQty').value = "";
+
+        alert("आपका आर्डर गोदाम तक भेज दिया गया है! जल्द ही सामान पहुँचाया जाएगा।");
+    }
+
+    function addCrop() {
+        var name = document.getElementById('farmerName').value;
+        var phone = document.getElementById('phone').value;
+        var crop = document.getElementById('cropType').value;
+        var qty = document.getElementById('quantity').value;
+
+        if(name === "" || phone === "" || qty === "") {
+            alert("कृपया सभी जानकारी भरें!");
+            return;
+        }
+
+        var listDiv = document.getElementById('displayList');
+        if(listDiv.innerHTML.includes("अभी कोई नया आर्डर")) {
+            listDiv.innerHTML = "";
+        }
+
+        var card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = "<strong>🌾 अनाज बिक्री की जानकारी</strong><br>" +
+                         "<strong>नाम:</strong> " + name + "<br>" +
+                         "<strong>फोन:</strong> " + phone + "<br>" +
+                         "<strong>अनाज:</strong> " + crop + " - " + qty + " क्विंटल";
+
+        listDiv.prepend(card);
+
+        document.getElementById('farmerName').value = "";
+        document.getElementById('phone').value = "";
+        document.getElementById('quantity').value = "";
+
+        alert("अनाज की जानकारी सफलतापर्वक जुड़ गई है!");
+    }
+</script>
+
+</body>
+</html>
